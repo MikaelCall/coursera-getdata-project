@@ -47,3 +47,4 @@ colnames(valid.data) <- variable.names
 activity.subject.averages <- subset(aggregate(valid.data, list(valid.data$activity, valid.data$subject), mean), 
                                     select = - c(subject, activity))
 colnames(activity.subject.averages)[c(1, 2)] <- c("Activity", "Subject")
+write.table(activity.subject.averages, "another_tidy_dataset.txt", row.names=FALSE)
